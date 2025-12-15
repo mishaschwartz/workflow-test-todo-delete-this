@@ -1,0 +1,13 @@
+name: test
+on:
+  workflow_dispatch:
+env:
+  testVar: ${{ github.event.inputs.pathPrefix || '/stac-browser/' }}
+jobs:
+  testJob:
+    runs-on: ubuntu-latest
+    name: test env var default
+    steps:
+      - name: test env var default
+        run: |
+          echo ${testVar}
